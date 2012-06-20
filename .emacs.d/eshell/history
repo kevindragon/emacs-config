@@ -1,0 +1,128 @@
+scp.exe dchk@staging2.lexisnexis.com.cn:~/kevin/200-content.cfg ./
+cd /home
+pwd
+mkdir jiangkx
+cd -
+scp.exe dchk@staging2.lexisnexis.com.cn:~/kevin/200-content.cfg ./
+mkdir /home/jiangkx/.ssh
+scp.exe dchk@staging2.lexisnexis.com.cn:~/kevin/200-content.cfg ./
+exit
+cd -
+cd x:/alpha/
+ls
+cd ../Ess/cfgs/cfg.202/odbcfetch/increment/
+ls
+rm *~
+ls
+cvs status overview.cfg 
+cvs diff overview.cfg 
+cvs tag -b englishhyperlink overview.cfg 
+cvs up -r englishhyperlink overview.cfg link overview.cfg 
+cvs log ep_news_law.cfg | less
+cvs log ep_news_law.cfg
+cvs ci -m "Englihs hyperlink table move to cross_ref_link_en" overview.cfg 
+cvs status case.cfg
+cvs status ip_cases.cfg
+cvs status newlaw_lm.cfg
+cvs status -v newlaw_lm.cfg
+cvs status newlaw_lm.cfg
+cvs tag -b englishhyperlink newlaw_lm.cfg
+cvs up -r englishhyperlink newlaw_lm.cfg
+cvs ci -m "Englihs hyperlink table move to cross_ref_link_en" newlaw_lm.cfg
+cd ../../
+ls
+cd ../
+ls
+cd IDOL/
+ls
+cd ../
+ls
+cd dah/
+ls
+CVSls
+ls
+cvs status 210-dah.cfg 
+cvs ci -m "add 210 dah config file" 210-dah.cfg 
+cvs status 211-dah
+cvs status 211-dah.cfg
+ls
+cvs add 211-dah.cfg 
+cvs ci -m "add 211 dah config file" 211-dah.cfg 
+cd
+ls
+cd x:/alpha/
+ls
+git status
+git branch
+git status
+git status
+clear
+exit
+cd x:/alpha/
+cd ../cvsrepos/
+ls
+cd alpha/
+ls
+cd HomePage_Data/
+ls
+cd ../homepage/
+cat search_result.php 
+cat -n search_result.php 
+cd c:/project/July\ Release\ 2012/
+ls
+cd parallel/
+ls
+mkdir 2012-06-19
+mv 200-load.log 2012-06-19/
+mv 211-load.log 2012-06-19/
+mv parallel.txt 2012-06-19/
+mv parallel.tar.gz 2012-06-19/
+ls
+ll
+ls -al
+scp.exe dchk@staging2.lexisnexis.com.cn:~/kevin/parallel.tar.gz ./
+uname -a
+ls /
+cd x:/
+ls /
+cd -
+exit
+echo $home
+whereis scp
+which scp
+env
+exit
+ls /
+cd c:/
+ls /
+exit
+ls /
+cd c:/
+cd project/
+scp dchk@staging2.lexisnexis.com.cn:~/kevin/parallel.tar.gz ./
+echo $cygwin-root 
+export cygwin-root=c:/cygwin
+echo $cygwin-root 
+ls /
+ls /
+exit
+ls /
+exit
+ls /
+exit
+ls /
+exit
+cd c:/home/
+ls
+git init .
+vim .gitignore
+cd c:/home/
+ls
+git status
+git status
+git add .emacs
+git add .emacs.d
+git status
+git commit -am "init"
+git remote add origin https://github.com/kevindragon/emacs-config.git
+git push
