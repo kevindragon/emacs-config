@@ -1,6 +1,10 @@
 ;; author: Kevin.Jiang
 ;; E-mail: kittymiky@gmail.com
 
+;; 设置我的个人信息
+(setq user-full-name "Kevin Jiang")
+(setq user-mail-address "kittymiky@gmail.com")
+
 ;;----------------------------------------
 ;;             加载扩展文件
 ;;----------------------------------------
@@ -62,14 +66,22 @@
 ;(windmove-default-keybindings 'alt)
 (windmove-default-keybindings)
 
-;; 显示括号匹配
+;; 显示括号匹配,但不跳转到另外一个括号的位置
 (show-paren-mode t)
 (setq show-paren-style 'parentheses)
+;; 开启括号自动补全
 (electric-pair-mode t)
 
 
 ;; 不产生备份文件
 (setq make-backup-files nil)
+
+;; 防止页面滚动时跳动，scroll-margin 3可以在靠近屏幕边缘3行时就开始滚动
+(setq scroll-margin 3
+      scroll-conservatively 10000)
+
+;; 把缺省的 major mode 设置为 text-mode, 而不是几乎什么功能也 没有的 fundamental-mode.
+(setq default-major-mode 'text-mode)
 
 ;; 显示行列号
 (require 'linum)
@@ -92,9 +104,11 @@
 
 ;; 当emacs退出时保存打开的文件
 (load "desktop") 
-(desktop-load-default)
-(desktop-read)
 (desktop-save-mode 1)
+(setq-default desktop-load-locked-desktop t)
+(desktop-read)
+(desktop-load-default)
+
 
 ;; replace tab with space
 (setq-default indent-tabs-mode nil)
@@ -120,11 +134,10 @@
              (setq tab-width 4)
              (setq c-basic-offset 4)
              (setq indent-tabs-mode nil)))
-(define-key php-mode-map (kbd ";") 'self-insert-command)
-(define-key php-mode-map (kbd ")") 'self-insert-command)
-(define-key php-mode-map (kbd "(") 'self-insert-command)
-(define-key php-mode-map (kbd ",") 'self-insert-command)
-(define-key php-mode-map (kbd "{") 'self-insert-command)
+;(define-key php-mode-map (kbd ";") 'self-insert-command)
+;(define-key php-mode-map (kbd ")") 'self-insert-command)
+;(define-key php-mode-map (kbd "(") 'self-insert-command)
+;(define-key php-mode-map (kbd ",") 'self-insert-command)
 
 
 ;; tabbar mode
@@ -139,4 +152,9 @@
 ;; use vim mode
 (add-to-list 'load-path "~/.emacs.d/vim-mode/")
 (require 'vim)
-(vim-mode 1)
+;(vim-mode 1)
+
+
+;; 让 Emacs 可以直接打开和显示图片
+(auto-image-file-mode)
+

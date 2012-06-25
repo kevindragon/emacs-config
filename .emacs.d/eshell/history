@@ -1,16 +1,3 @@
-scp.exe dchk@staging2.lexisnexis.com.cn:~/kevin/200-content.cfg ./
-cd /home
-pwd
-mkdir jiangkx
-cd -
-scp.exe dchk@staging2.lexisnexis.com.cn:~/kevin/200-content.cfg ./
-mkdir /home/jiangkx/.ssh
-scp.exe dchk@staging2.lexisnexis.com.cn:~/kevin/200-content.cfg ./
-exit
-cd -
-cd x:/alpha/
-ls
-cd ../Ess/cfgs/cfg.202/odbcfetch/increment/
 ls
 rm *~
 ls
@@ -126,3 +113,16 @@ git status
 git commit -am "init"
 git remote add origin https://github.com/kevindragon/emacs-config.git
 git push
+cd c:/workspace/check/data_count_check/
+ls
+./compare.py overview.csv koverview.xml 
+compare.py
+python
+exit
+cd .emacs.d/
+ls
+find -name '*desktop*'
+help find
+find --help
+which find
+find '*desktop*'

@@ -10,7 +10,6 @@ x:/Ess/cfgs/cfg.202/odbcfetch/increment
 x:/Ess/cfgs/cfg.202
 x:/Ess/cfgs/IDOL
 x:/Ess/cfgs
-c:/home
 c:/tmp
 x:/alpha
 x:/cvsrepos
@@ -24,6 +23,7 @@ h:/
 c:/
 c:/project
 h:/
-c:/home
 x:/alpha/topic/class
+c:/workspace/check/data_count_check
 c:/home
+c:/home/.emacs.d
