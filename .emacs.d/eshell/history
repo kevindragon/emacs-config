@@ -1,13 +1,3 @@
-cvs log ep_news_law.cfg
-cvs ci -m "Englihs hyperlink table move to cross_ref_link_en" overview.cfg 
-cvs status case.cfg
-cvs status ip_cases.cfg
-cvs status newlaw_lm.cfg
-cvs status -v newlaw_lm.cfg
-cvs status newlaw_lm.cfg
-cvs tag -b englishhyperlink newlaw_lm.cfg
-cvs up -r englishhyperlink newlaw_lm.cfg
-cvs ci -m "Englihs hyperlink table move to cross_ref_link_en" newlaw_lm.cfg
 cd ../../
 ls
 cd ../
@@ -126,3 +116,13 @@ ls
 cd cedet-1.1/
 ls
 emacs -Q -l cedet-build.el -f cedet-build
+xmllint --format xx.xml 
+xmllint --format xx.xml > a.xml
+mv a.xml xx.xml 
+cd 
+cd x:/alpha/
+cd ChinaOnlineAdmin/
+ls
+cd adm_case/
+ls
+vim php_errors.log 

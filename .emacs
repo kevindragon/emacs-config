@@ -134,40 +134,18 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete-1.3.1/ac-dict")
 (ac-config-default)
 
+
+;; 在行首删除一行时，把换行符也删除掉
+(setq-default kill-whole-line t)
+(setq-default kill-ring-max 10000)
+
+
 ;; python
 (require 'python-mode)
 
 ;; php mode
-(load "php-mode")
-(add-hook 'php-mode-hook
-          '(lambda()
-             (setq tab-width 4)
-             (setq c-basic-offset 4)
-             (setq indent-tabs-mode nil)))
-;(define-key php-mode-map (kbd ";") 'self-insert-command)
-;(define-key php-mode-map (kbd ")") 'self-insert-command)
-;(define-key php-mode-map (kbd "(") 'self-insert-command)
-;(define-key php-mode-map (kbd ",") 'self-insert-command)
-;; php语法检查(执行检查的时候需要/usr/bin/php，在windows下面还没有找到解决办法)
-;(require 'flymake)
-;(add-to-list 'flymake-err-line-patterns
-;  '("\\(Parse\\|Fatal\\) error: +\\(.*?\\)
-;      in \\(.*?\\) on line \\([0-9]+\\)$" 3 4 nil 2))
-;(add-to-list 'flymake-allowed-file-name-masks
-;               '("\\.php$" flymake-php-init))
-;; Drupal-type extensions
-;(add-to-list 'flymake-allowed-file-name-masks
-;   '("\\.module$" flymake-php-init))
-;(add-to-list 'flymake-allowed-file-name-masks
-;   '("\\.install$" flymake-php-init))
-;(add-to-list 'flymake-allowed-file-name-masks
-;   '("\\.inc$" flymake-php-init))
-;(add-to-list 'flymake-allowed-file-name-masks
-;   '("\\.engine$" flymake-php-init))
-;(add-hook 'php-mode-hook (lambda () (flymake-mode 1)))
-;(define-key php-mode-map '[M-S-up] 'flymake-goto-prev-error)
-;(define-key php-mode-map '[M-S-down] 'flymake-goto-next-error)
-
+(add-to-list 'load-path "~/.emacs.d/php-mode/")
+(load "php-mode-config")
 
 ;; tabbar mode
 ;(require 'tabbar)
