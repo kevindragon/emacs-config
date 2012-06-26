@@ -81,7 +81,7 @@
   :prefix "php-"
   :group 'languages)
 
-(defcustom php-executable "/usr/bin/php"
+(defcustom php-executable "C:/Program Files/php-5.4.4/php.exe"
   "The location of the PHP executable."
   :type 'string
   :group 'php)

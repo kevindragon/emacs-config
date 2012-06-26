@@ -1,11 +1,3 @@
-ls
-rm *~
-ls
-cvs status overview.cfg 
-cvs diff overview.cfg 
-cvs tag -b englishhyperlink overview.cfg 
-cvs up -r englishhyperlink overview.cfg link overview.cfg 
-cvs log ep_news_law.cfg | less
 cvs log ep_news_law.cfg
 cvs ci -m "Englihs hyperlink table move to cross_ref_link_en" overview.cfg 
 cvs status case.cfg
@@ -126,3 +118,11 @@ help find
 find --help
 which find
 find '*desktop*'
+php
+exit
+pwd
+cd .emacs.d/
+ls
+cd cedet-1.1/
+ls
+emacs -Q -l cedet-build.el -f cedet-build
