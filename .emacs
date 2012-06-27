@@ -83,6 +83,9 @@
 ;; 把缺省的 major mode 设置为 text-mode, 而不是几乎什么功能也 没有的 fundamental-mode.
 (setq default-major-mode 'text-mode)
 
+;; 设置默认编码，指定新建buffer的默认编码为utf-8-unix，换行符为unix的方式
+(setq default-buffer-file-coding-system 'utf-8-unix)
+
 ;; 显示行列号
 (require 'linum)
 (global-linum-mode t)
@@ -124,6 +127,10 @@
 (setq default-directory "~/")
 
 
+;;; 加载自定义快捷键
+(load "shutcut")
+
+
 ;; 递归minibuffer
 (setq enable-recursive-minibuffers t)
 
@@ -138,6 +145,15 @@
 ;; 在行首删除一行时，把换行符也删除掉
 (setq-default kill-whole-line t)
 (setq-default kill-ring-max 10000)
+
+
+;; yasnippet
+(add-to-list 'load-path "~/.emacs.d/yasnippet")
+(require 'yasnippet)
+(setq yas/snippet-dirs '("~/.emacs.d/yasnippet/snippets" "~/.emacs.d/yasnippet/extras/imported"))
+(setq yas/prompt-functions 
+      '(yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))
+(yas/global-mode 1)
 
 
 ;; python

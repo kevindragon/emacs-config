@@ -1,18 +1,3 @@
-cd ../../
-ls
-cd ../
-ls
-cd IDOL/
-ls
-cd ../
-ls
-cd dah/
-ls
-CVSls
-ls
-cvs status 210-dah.cfg 
-cvs ci -m "add 210 dah config file" 210-dah.cfg 
-cvs status 211-dah
 cvs status 211-dah.cfg
 ls
 cvs add 211-dah.cfg 
@@ -126,3 +111,18 @@ ls
 cd adm_case/
 ls
 vim php_errors.log 
+ls
+cat php_errors.log 
+date
+cat php_errors.log 
+echo '' > php_errors.log 
+ll
+ls -al
+cd c:/workspace/check/data_count_check/
+ls
+mv x:/cron/kcompany.xml ./
+ls
+comp.exe --help
+find 
+find --help
+exit
