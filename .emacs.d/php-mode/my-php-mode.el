@@ -31,11 +31,8 @@
 
 ;;; Code:
 
-
-;;;###autoload
-(add-to-list 'auto-mode-alist 
-             (cons "\\.php[s345]?\\|\\.phtml\\|\\.inc" 
-                   'php-mode))
+(require 'cc-mode)
+(require 'cc-langs)
 
 ;; 定义组
 (defgroup php nil
@@ -44,26 +41,15 @@
   :version "0.1"
   :link '(emacs-commentary-link "php"))
 
-;; 定义一个hook供调用
-(defcustom php-mode-hook nil
-  "List of functions to be executed on entry to `php-mode."
-  :type 'hook
+(defcustom shit "shit"
+  "shit var"
+  :type 'string
   :group 'php)
 
-;; 设置高亮的函数
-(defun set-php-mode-highlight ()
-  "设置php-mode高亮"
-  (font-lock-add-keywords
-   'php-mode
-   (("\\<\\(global\\|global\\|try\\|catch\\)\\>" . font-lock-keyword-face))
-   ))
-
 ;; 定义主模式
-(define-derived-mode php-mode
-  c-mode "PHP"
+(define-derived-mode php-mode prog-mode "PHP"
   "Major mode for PHP. \\{php-mode-map}"
-  (set-php-mode-highlight)
-  (run-hook 'php-mode-hook))
+  (setq myvar nil))
 
 (provide 'php-mode)
 

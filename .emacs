@@ -147,6 +147,11 @@
 (setq-default kill-ring-max 10000)
 
 
+;;; 加载cedet，在24版本中已经自带cedet
+(require 'cedet)
+(global-ede-mode 1)
+
+
 ;; yasnippet
 (add-to-list 'load-path "~/.emacs.d/yasnippet")
 (require 'yasnippet)
@@ -162,6 +167,7 @@
 ;; php mode
 (add-to-list 'load-path "~/.emacs.d/php-mode/")
 (load "php-mode-config")
+
 
 ;; tabbar mode
 ;(require 'tabbar)
@@ -179,4 +185,3 @@
 
 ;; 让Emacs可以直接打开和显示图片(貌似不管用)
 (auto-image-file-mode)
-

@@ -1,8 +1,3 @@
-cvs status 211-dah.cfg
-ls
-cvs add 211-dah.cfg 
-cvs ci -m "add 211 dah config file" 211-dah.cfg 
-cd
 ls
 cd x:/alpha/
 ls
@@ -126,3 +121,8 @@ comp.exe --help
 find 
 find --help
 exit
+pwd
+cd .emacs.d/
+ls
+cd x:/alpha/topic/libs/
+ls

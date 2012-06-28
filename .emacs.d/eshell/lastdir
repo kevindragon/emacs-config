@@ -1,4 +1,3 @@
-x:/alpha/test/tools
 x:/Ess
 x:/alpha/ip
 c:/project
@@ -22,12 +21,13 @@ h:/
 x:/alpha/topic/class
 c:/workspace/check/data_count_check
 c:/Program Files/emacs-24.1/lisp/progmodes
-c:/home/.emacs.d
 c:/home/.emacs.d/cedet-1.1
 c:/Documents and Settings/jiangkx/Desktop
-c:/home
 x:/alpha
 x:/alpha/ChinaOnlineAdmin
 x:/alpha/ChinaOnlineAdmin/adm_case
 c:/workspace/check/data_count_check
 x:/alpha
+c:/home
+c:/home/.emacs.d
+x:/alpha/topic/libs
