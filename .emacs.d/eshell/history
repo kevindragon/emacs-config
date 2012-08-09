@@ -1,128 +1,128 @@
+python.exe compare.py  klaw_210.xml klaw_200.xml 
+python.exe compare.py  kcase_210.xml kcase_200.xml 
+python.exe compare.py koverview_210.xml koverview_200.xml 
+python.exe compare.py klaw_210.xml klaw_200.xml 
+python.exe compare.py klaw_200.xml klaw_210.xml 
+clear
+cls
+?
+/?
+help
+python.exe compare.py kep_news_210.xml kep_news_200.xml 
+python.exe compare.py knewlaw_210.xml knewlaw_200.xml 
+python.exe compare.py knewlaw_210.xml newlaw.csv 
+python.exe compare.py ep_news.csv  kep_news_210.xml
+python.exe compare.py kep_news_210.xml ep_news.csv 
+cd ../
 ls
-cd x:/alpha/
 ls
-git status
-git branch
-git status
-git status
+mv x:/littery/autn/knewlaw_210.xml ./
+mv x:/littery/autn/knewlaw_200.xml ./
+ls
+python.exe compare.py knewlaw_200.xml knewlaw_210.xml 
+tracert hk.lexiscn.com
+tracert hk.lexiscn.com
+tracert staging2.lexisnexis.com.cn
+tracert staging2.lexisnexis.com.cn
+python 
+ping monitorix.lexisnexis.com.cn
+ping
+cd /
+ping monitorix.lexisnexis.com.cn
+cp IndustryCategory.class.php /cvsrepos/alpha/topic/class/
+exit
+l
+ls
+gcc -o hanoi hanoi.c 
+exit
+cd c:/workspace/
+ls
+cd check/data_count_check/
+ls
+python.exe compare.py klaw_211.xml klaw_210.xml 
+ping zabbix.lexisnexis.com.cn
+ping hk.lexiscn.com
+ping staging2.lexisnexis.com.cn
+ping staging2.lexisnexis.com.cn
+cd ../
+ls
+cd ../workspace/
+ls
+cd check/
+ls
+cd data_count_check/
+ls
+python.exe compare.py klaw_200.xml klaw_211.xml 
+python.exe compare.py klaw_211.xml klaw_200.xml 
+python.exe compare.py kcase_211.xml kcase_200.xml 
+python.exe compare.py kcase_200.xml kcase_211.xml
+ls
+exit
+ipconfig /all
+ipconfig
+ipconfig /all
+ipconfig /all
+exit
+ipconfig /all
+exit
+cd /
+cd workspace/check/data_count_check/
+ls
+python.exe compare.py ep_news_case-08.csv kep_news_case.xml 
+python.exe compare.py tax-09.csv klaw_211.xml
+python.exe law.csv klaw_211.xml
+python.exe compare.py law.csv klaw_211.xml
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
+python.exe pickupid.py 
 clear
 exit
-cd x:/alpha/
-cd ../cvsrepos/
-ls
-cd alpha/
-ls
-cd HomePage_Data/
-ls
-cd ../homepage/
-cat search_result.php 
-cat -n search_result.php 
-cd c:/project/July\ Release\ 2012/
-ls
-cd parallel/
-ls
-mkdir 2012-06-19
-mv 200-load.log 2012-06-19/
-mv 211-load.log 2012-06-19/
-mv parallel.txt 2012-06-19/
-mv parallel.tar.gz 2012-06-19/
-ls
-ll
-ls -al
-scp.exe dchk@staging2.lexisnexis.com.cn:~/kevin/parallel.tar.gz ./
-uname -a
-ls /
-cd x:/
-ls /
-cd -
+python.exe pickupid.py klaw_211.xml
+python.exe pickupid.py klaw_211.xml
+python.exe pickupid.py klaw_211.xml
 exit
-echo $home
-whereis scp
-which scp
-env
-exit
-ls /
-cd c:/
-ls /
-exit
-ls /
-cd c:/
-cd project/
-scp dchk@staging2.lexisnexis.com.cn:~/kevin/parallel.tar.gz ./
-echo $cygwin-root 
-export cygwin-root=c:/cygwin
-echo $cygwin-root 
-ls /
-ls /
-exit
-ls /
-exit
-ls /
-exit
-ls /
-exit
-cd c:/home/
 ls
-git init .
-vim .gitignore
-cd c:/home/
+gcc
+gcc -o pickid pickid.c 
+exit
+cd ../../
+ls
+cd working-tools/
+ls
+cd Autonomy/
+ls
+cd ../
 ls
 git status
+git remote -v
+git pull
+cd Autonomy/
+ls
 git status
-git add .emacs
-git add .emacs.d
+git commit -am "添加从xml取ID的程序(C语言)"
+git add .
+git commit -am "添加从xml取ID的程序(C语言)"
 git status
-git commit -am "init"
-git remote add origin https://github.com/kevindragon/emacs-config.git
+git log
+git status
 git push
-cd c:/workspace/check/data_count_check/
+cd ../../
 ls
-./compare.py overview.csv koverview.xml 
-compare.py
-python
-exit
-cd .emacs.d/
+cd check/
 ls
-find -name '*desktop*'
-help find
-find --help
-which find
-find '*desktop*'
-php
-exit
-pwd
-cd .emacs.d/
+cd data_count_check/
 ls
-cd cedet-1.1/
-ls
-emacs -Q -l cedet-build.el -f cedet-build
-xmllint --format xx.xml 
-xmllint --format xx.xml > a.xml
-mv a.xml xx.xml 
-cd 
-cd x:/alpha/
-cd ChinaOnlineAdmin/
-ls
-cd adm_case/
-ls
-vim php_errors.log 
-ls
-cat php_errors.log 
-date
-cat php_errors.log 
-echo '' > php_errors.log 
-ll
-ls -al
-cd c:/workspace/check/data_count_check/
-ls
-mv x:/cron/kcompany.xml ./
-ls
-comp.exe --help
-find 
-find --help
-exit
-pwd
-cd .emacs.d/
-ls
-cd x:/alpha/topic/libs/
-ls
+python.exe compare.py kcase.csv kcase.log 

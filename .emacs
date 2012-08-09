@@ -39,6 +39,9 @@
 (setq display-time-day-and-date t)
 (transient-mark-mode t)
 
+;; 关闭出错时的提示声音
+;(setq visible-bell t)
+
 ;; 语法高亮
 (global-font-lock-mode t)
 
@@ -84,7 +87,7 @@
 (setq default-major-mode 'text-mode)
 
 ;; 设置默认编码，指定新建buffer的默认编码为utf-8-unix，换行符为unix的方式
-(setq default-buffer-file-coding-system 'utf-8-unix)
+;(setq default-buffer-file-coding-system 'utf-8-unix)
 
 ;; 显示行列号
 (require 'linum)
@@ -112,11 +115,9 @@
 (desktop-read)
 (desktop-load-default)
 
-
 ;; 记住上次文件打开的位置
 (require 'saveplace)
 (setq-default save-place t)
-
 
 ;; replace tab with space
 (setq-default indent-tabs-mode nil)
@@ -124,16 +125,14 @@
 (setq default-tab-width 4)
 (setq tab-width 4)
 
+;; default directory
 (setq default-directory "~/")
-
 
 ;;; 加载自定义快捷键
 (load "shutcut")
 
-
 ;; 递归minibuffer
 (setq enable-recursive-minibuffers t)
-
 
 ;; auto complete
 (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1/")
@@ -141,25 +140,21 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete-1.3.1/ac-dict")
 (ac-config-default)
 
-
 ;; 在行首删除一行时，把换行符也删除掉
-(setq-default kill-whole-line t)
+;(setq-default kill-whole-line t)
 (setq-default kill-ring-max 10000)
-
 
 ;;; 加载cedet，在24版本中已经自带cedet
 (require 'cedet)
 (global-ede-mode 1)
 
-
 ;; yasnippet
-(add-to-list 'load-path "~/.emacs.d/yasnippet")
-(require 'yasnippet)
-(setq yas/snippet-dirs '("~/.emacs.d/yasnippet/snippets" "~/.emacs.d/yasnippet/extras/imported"))
-(setq yas/prompt-functions 
-      '(yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))
-(yas/global-mode 1)
-
+;(add-to-list 'load-path "~/.emacs.d/yasnippet")
+;(require 'yasnippet)
+;(setq yas/snippet-dirs '("~/.emacs.d/yasnippet/snippets" "~/.emacs.d/yasnippet/extras/imported"))
+;(setq yas/prompt-functions 
+;      '(yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))
+;(yas/global-mode 1)
 
 ;; python
 (require 'python-mode)
@@ -168,20 +163,39 @@
 (add-to-list 'load-path "~/.emacs.d/php-mode/")
 (load "php-mode-config")
 
-
 ;; tabbar mode
 ;(require 'tabbar)
 ;(tabbar-mode t)
 ;(global-set-key [(control shift tab)] 'tabbar-backward)
 ;(global-set-key [(control tab)] 'tabbar-forward)
-;(put 'upcase-region 'disabled nil)
-
 
 ;; use vim mode
 ;(add-to-list 'load-path "~/.emacs.d/vim-mode/")
 ;(require 'vim)
 ;(vim-mode 1)
 
-
 ;; 让Emacs可以直接打开和显示图片(貌似不管用)
 (auto-image-file-mode)
+
+(put 'dired-find-alternate-file 'disabled nil)
+
+;; 复制一行或者多行
+(global-set-key (kbd "C-c C-l") 'copy-lines)
+(defun copy-lines(&optional arg)
+  (interactive "p")
+  (save-excursion
+    (beginning-of-line)
+    (set-mark (point))
+    (next-line arg)
+    (kill-ring-save (mark) (point)))
+)
+
+;; 指定当前buffer的写入编码，只对当前buffer有效，即此命令写在配置文件中无效，只能通过M-x来执行
+;(set-buffer-file-coding-system 'utf-8-unix)
+;; 指定新建buffer的默认编码为utf-8-unix，换行符为unix的方式
+;(setq default-buffer-file-coding-system 'utf-8-unix)
+;; 将utf-8放到编码顺序表的最开始，即先从utf-8开始识别编码，此命令可以多次使用，后指定的编码先探测
+;(prefer-coding-system 'utf-8)
+;; 指定Emacs的语言环境，按照特定语言环境设置前面的两个变量
+;(set-language-environment 'utf-8)
+
