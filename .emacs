@@ -185,3 +185,8 @@
 
 ;; 让Emacs可以直接打开和显示图片(貌似不管用)
 (auto-image-file-mode)
+
+(defun cygwin-shell ()
+    (interactive)
+    (let ((explicit-shell-file-name "d:/cygwin/bin/bash"))
+     (call-interactively 'shell)))
