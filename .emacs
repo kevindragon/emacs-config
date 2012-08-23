@@ -140,8 +140,11 @@
 (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1/")
 (require 'auto-complete)
 (require 'auto-complete-config)
+(global-auto-complete-mode t)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete-1.3.1/ac-dict")
 (ac-config-default)
+(setq ac-auto-start 2)
+(setq ac-dwim t)
 
 ;; 在行首删除一行时，把换行符也删除掉
 ;(setq-default kill-whole-line t)
@@ -152,15 +155,27 @@
 (global-ede-mode 1)
 
 ;; yasnippet
-;(add-to-list 'load-path "~/.emacs.d/yasnippet")
-;(require 'yasnippet)
-;(setq yas/snippet-dirs '("~/.emacs.d/yasnippet/snippets" "~/.emacs.d/yasnippet/extras/imported"))
-;(setq yas/prompt-functions 
-;      '(yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))
-;(yas/global-mode 1)
+(add-to-list 'load-path "~/.emacs.d/yasnippet")
+(require 'yasnippet)
+(setq yas/snippet-dirs '("~/.emacs.d/yasnippet/snippets" "~/.emacs.d/yasnippet/extras/imported"))
+(setq yas/prompt-functions 
+      '(yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))
+(yas/global-mode 1)
 
 ;; python
 (require 'python-mode)
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
+(pymacs-load "ropemacs" "rope-")
+(setq ropemacs-enable-autoimport t)
+(require 'pycomplete)
+(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
+(autoload 'python-mode "python-mode" "Python editing mode." t)
+(setq interpreter-mode-alist(cons '("python" . python-mode)
+                                  interpreter-mode-alist))
 
 ;; php mode
 (add-to-list 'load-path "~/.emacs.d/php-mode/")
@@ -180,7 +195,6 @@
 ;; 让Emacs可以直接打开和显示图片(貌似不管用)
 (auto-image-file-mode)
 
-<<<<<<< HEAD
 (put 'dired-find-alternate-file 'disabled nil)
 
 ;; 复制一行或者多行
@@ -227,9 +241,3 @@
     (let ((explicit-shell-file-name "c:/cygwin/bin/bash"))
      (call-interactively 'shell)))
 
-=======
-(defun cygwin-shell ()
-    (interactive)
-    (let ((explicit-shell-file-name "d:/cygwin/bin/bash"))
-     (call-interactively 'shell)))
->>>>>>> 32e39c2fd6f325fe5966b2aa3121f9fe048dc1e7
