@@ -80,8 +80,10 @@
 (setq make-backup-files nil)
 
 ;; 防止页面滚动时跳动，scroll-margin 3可以在靠近屏幕边缘3行时就开始滚动
-(setq scroll-margin 3
-      scroll-conservatively 10000)
+(setq scroll-conservatively 10000
+      scroll-margin 3)
+(add-hook 'eshell-mode
+          (setq scroll-margin 1))
 
 ;; 把缺省的 major mode 设置为 text-mode, 而不是几乎什么功能也 没有的 fundamental-mode.
 (setq default-major-mode 'text-mode)
@@ -136,6 +138,7 @@
 
 ;; auto complete
 (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1/")
+(require 'auto-complete)
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete-1.3.1/ac-dict")
 (ac-config-default)
@@ -190,12 +193,36 @@
     (kill-ring-save (mark) (point)))
 )
 
-;; 指定当前buffer的写入编码，只对当前buffer有效，即此命令写在配置文件中无效，只能通过M-x来执行
-;(set-buffer-file-coding-system 'utf-8-unix)
-;; 指定新建buffer的默认编码为utf-8-unix，换行符为unix的方式
-;(setq default-buffer-file-coding-system 'utf-8-unix)
-;; 将utf-8放到编码顺序表的最开始，即先从utf-8开始识别编码，此命令可以多次使用，后指定的编码先探测
-;(prefer-coding-system 'utf-8)
+;;指定当前buffer的写入编码，只对当前buffer有效，即此命令写在配置文件中无效，只能 通过M-x来执行
+(set-buffer-file-coding-system 'utf-8-unix)
+;;指定新建buffer的默认编码为utf-8-unix，换行符为unix的方式
+(setq default-buffer-file-coding-system 'utf-8-unix)
+;;将utf-8放到编码顺序表的最开始，即先从utf-8开始识别编码，此命令可以多次使用，后 指定的编码先探测
+(prefer-coding-system 'utf-8)
+;;指定Emacs的语言环境，按照特定语言环境设置前面的两个变量
+(set-language-environment 'utf-8)
 ;; 指定Emacs的语言环境，按照特定语言环境设置前面的两个变量
-;(set-language-environment 'utf-8)
+(set-language-environment 'utf-8)
+
+;; web settings
+(add-to-list 'auto-mode-alist 
+             (cons "\\.tpl" 'html-mode))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ede-project-directories (quote ("c:/workspace/lab/python/mysite/mysite"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; use cygwin shell
+(defun cygwin-shell ()
+    (interactive)
+    (let ((explicit-shell-file-name "c:/cygwin/bin/bash"))
+     (call-interactively 'shell)))
 

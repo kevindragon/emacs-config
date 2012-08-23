@@ -1,0 +1,280 @@
+;; Object index/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "index/"
+  :tables (list 
+   (semanticdb-table "IndexWriter.java"
+    :major-mode 'java-mode
+    :tags 
+        '( ("org.galagosearch.core.index" package nil nil [54 90])
+            ("java.io.BufferedOutputStream" include nil nil [92 128])
+            ("java.io.ByteArrayOutputStream" include nil nil [129 166])
+            ("java.io.DataOutputStream" include nil nil [167 199])
+            ("java.io.File" include nil nil [200 220])
+            ("java.io.FileNotFoundException" include nil nil [221 258])
+            ("java.io.FileOutputStream" include nil nil [259 291])
+            ("java.io.IOException" include nil nil [292 319])
+            ("java.io.OutputStream" include nil nil [320 348])
+            ("java.util.ArrayList" include nil nil [349 376])
+            ("java.util.List" include nil nil [377 399])
+            ("java.util.zip.GZIPOutputStream" include nil nil [400 438])
+            ("org.galagosearch.tupleflow.Counter" include nil nil [439 481])
+            ("org.galagosearch.tupleflow.Parameters" include nil nil [482 527])
+            ("org.galagosearch.tupleflow.TupleFlowParameters" include nil nil [528 582])
+            ("org.galagosearch.tupleflow.Utility" include nil nil [583 625])
+            ("IndexWriter" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("MAGIC_NUMBER" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [1381 1441])
+                    ("output" variable (:type "DataOutputStream") (reparse-symbol class_member_declaration) [1447 1471])
+                    ("vocabulary" variable
+                       (:typemodifiers ("final")
+                        :type "VocabularyWriter")
+                        (reparse-symbol class_member_declaration) [1476 1510])
+                    ("manifest" variable (:type "Parameters") (reparse-symbol class_member_declaration) [1515 1535])
+                    ("blockSize" variable (:type "int") (reparse-symbol class_member_declaration) [1576 1598])
+                    ("vocabGroup" variable (:type "int") (reparse-symbol class_member_declaration) [1603 1623])
+                    ("filePosition" variable (:type "long") (reparse-symbol class_member_declaration) [1628 1650])
+                    ("listBytes" variable (:type "long") (reparse-symbol class_member_declaration) [1655 1674])
+                    ("isCompressed" variable (:type "boolean") (reparse-symbol class_member_declaration) [1718 1747])
+                    ("recordsWritten" variable (:type "Counter") (reparse-symbol class_member_declaration) [1753 1783])
+                    ("blocksWritten" variable (:type "Counter") (reparse-symbol class_member_declaration) [1788 1817])
+                    ("IndexWriter" function
+                       (:constructor-flag t
+                        :throws ("FileNotFoundException" "IOException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("outputFilename" variable (:type "String") (reparse-symbol formal_parameters) [1903 1924])
+                            ("parameters" variable (:type "Parameters") (reparse-symbol formal_parameters) [1926 1947]))                          )
+                        (reparse-symbol class_member_declaration) [1884 2495])
+                    ("IndexWriter" function
+                       (:constructor-flag t
+                        :throws ("FileNotFoundException" "IOException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("outputFilename" variable (:type "String") (reparse-symbol formal_parameters) [2524 2545]))                          )
+                        (reparse-symbol class_member_declaration) [2505 2934])
+                    ("IndexWriter" function
+                       (:constructor-flag t
+                        :throws ("FileNotFoundException" "IOException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("parameters" variable (:type "TupleFlowParameters") (reparse-symbol formal_parameters) [2959 2989]))                          )
+                        (reparse-symbol class_member_declaration) [2940 3244])
+                    ("getManifest" function
+                       (:typemodifiers ("public")
+                        :type "Parameters")
+                        (reparse-symbol class_member_declaration) [3432 3496])
+                    ("bufferedSize" function
+                       (:typemodifiers ("public")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [3702 3882])
+                    ("updateBufferedSize" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("list" variable (:type "IndexElement") (reparse-symbol formal_parameters) [3919 3936]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3888 4127])
+                    ("invertedListLength" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("list" variable (:type "IndexElement") (reparse-symbol formal_parameters) [4165 4182]))                          
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [4133 4422])
+                    ("flush" function
+                       (:throws ("IOException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4480 4823])
+                    ("getBlockSize" function
+                       (:typemodifiers ("public")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [4829 4889])
+                    ("lessThanOrEqualTo" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("one" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol formal_parameters) [4929 4939])
+                            ("two" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol formal_parameters) [4941 4951]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [4895 5451])
+                    ("wordsInOrder" function
+                       (:typemodifiers ("public")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [5584 5967])
+                    ("ListData" type
+                       (:members 
+                          ( ("length" function (:type "long") (reparse-symbol interface_member_declaration) [6006 6020])
+                            ("encodedLength" function (:type "long") (reparse-symbol interface_member_declaration) [6029 6050])
+                            ("write" function
+                               (:throws ("IOException")
+                                :arguments 
+                                  ( ("stream" variable (:type "OutputStream") (reparse-symbol formal_parameters) [6070 6089]))                                  
+                                :type "void")
+                                (reparse-symbol interface_member_declaration) [6059 6110]))                          
+                        :type "interface")
+                        (reparse-symbol class_member_declaration) [5977 6116])
+                    ("UncompressedListData" type
+                       (:interfaces ("ListData")
+                        :members 
+                          ( ("UncompressedListData" function (:constructor-flag t) (reparse-symbol class_member_declaration) [6231 6336])
+                            ("length" function
+                               (:typemodifiers ("public")
+                                :type "long")
+                                (reparse-symbol class_member_declaration) [6354 6561])
+                            ("encodedLength" function
+                               (:typemodifiers ("public")
+                                :type "long")
+                                (reparse-symbol class_member_declaration) [6579 6647])
+                            ("write" function
+                               (:throws ("IOException")
+                                :typemodifiers ("public")
+                                :arguments 
+                                  ( ("stream" variable (:type "OutputStream") (reparse-symbol formal_parameters) [6683 6702]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [6665 6829]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [6126 6835])
+                    ("CompressedListData" type
+                       (:interfaces ("ListData")
+                        :members 
+                          ( ("compressedData" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol class_member_declaration) [6939 6961])
+                            ("CompressedListData" function
+                               (:constructor-flag t
+                                :throws ("IOException"))
+                                (reparse-symbol class_member_declaration) [6979 7125])
+                            ("compress" function
+                               (:throws ("IOException")
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [7143 7718])
+                            ("length" function
+                               (:typemodifiers ("public")
+                                :type "long")
+                                (reparse-symbol class_member_declaration) [7736 7943])
+                            ("encodedLength" function
+                               (:typemodifiers ("public")
+                                :type "long")
+                                (reparse-symbol class_member_declaration) [7961 8042])
+                            ("write" function
+                               (:throws ("IOException")
+                                :typemodifiers ("public")
+                                :arguments 
+                                  ( ("stream" variable (:type "OutputStream") (reparse-symbol formal_parameters) [8078 8097]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [8060 8171]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [6845 8177])
+                    ("VocabularyHeader" type
+                       (:typemodifiers ("static")
+                        :members 
+                          ( ("ends" variable
+                               (:dereference 1
+                                :type "short")
+                                (reparse-symbol class_member_declaration) [8259 8272])
+                            ("wordByteStream" variable (:type "ByteArrayOutputStream") (reparse-symbol class_member_declaration) [8281 8348])
+                            ("vocabOutput" variable (:type "DataOutputStream") (reparse-symbol class_member_declaration) [8357 8425])
+                            ("blockOverlap" variable (:type "int") (reparse-symbol class_member_declaration) [8434 8451])
+                            ("groupCount" variable (:type "int") (reparse-symbol class_member_declaration) [8460 8475])
+                            ("vocabGroupSize" variable (:type "int") (reparse-symbol class_member_declaration) [8484 8503])
+                            ("VocabularyHeader" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("vocabGroupSize" variable (:type "int") (reparse-symbol formal_parameters) [8569 8587]))                                  )
+                                (reparse-symbol class_member_declaration) [8521 8797])
+                            ("prefixOverlap" function
+                               (:arguments 
+                                  ( ("firstTerm" variable
+                                       (:dereference 1
+                                        :type "byte")
+                                        (reparse-symbol formal_parameters) [8825 8841])
+                                    ("lastTerm" variable
+                                       (:dereference 1
+                                        :type "byte")
+                                        (reparse-symbol formal_parameters) [8843 8858])
+                                    ("start" variable (:type "int") (reparse-symbol formal_parameters) [8860 8869]))                                  
+                                :type "int")
+                                (reparse-symbol class_member_declaration) [8807 9233])
+                            ("prefixOverlap" function
+                               (:arguments 
+                                  ( ("firstTerm" variable
+                                       (:dereference 1
+                                        :type "byte")
+                                        (reparse-symbol formal_parameters) [9261 9277])
+                                    ("secondTerm" variable
+                                       (:dereference 1
+                                        :type "byte")
+                                        (reparse-symbol formal_parameters) [9279 9296]))                                  
+                                :type "int")
+                                (reparse-symbol class_member_declaration) [9243 9369])
+                            ("calculateBlockPrefix" function (:type "void") (reparse-symbol class_member_declaration) [9387 9736])
+                            ("build" function
+                               (:throws ("IOException")
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [9746 11432])
+                            ("getBlockOverlap" function (:type "int") (reparse-symbol class_member_declaration) [11442 11508])
+                            ("getGroupCount" function (:type "int") (reparse-symbol class_member_declaration) [11526 11588])
+                            ("getKeyCount" function (:type "int") (reparse-symbol class_member_declaration) [11598 11659])
+                            ("getKeyDataLength" function (:type "int") (reparse-symbol class_member_declaration) [11677 11753])
+                            ("getFirstWord" function (:type "byte[]") (reparse-symbol class_member_declaration) [11771 11836])
+                            ("writeKeyHeader" function
+                               (:throws ("IOException")
+                                :arguments 
+                                  ( ("output" variable (:type "DataOutputStream") (reparse-symbol formal_parameters) [11874 11897]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [11854 12297])
+                            ("writeKeyData" function
+                               (:throws ("IOException")
+                                :arguments 
+                                  ( ("output" variable (:type "DataOutputStream") (reparse-symbol formal_parameters) [12333 12356]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [12315 12444]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [8187 12450])
+                    ("writeBlock" function
+                       (:throws ("IOException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("length" variable (:type "long") (reparse-symbol formal_parameters) [12510 12521]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [12456 14909])
+                    ("needsFlush" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("list" variable (:type "IndexElement") (reparse-symbol formal_parameters) [14942 14959]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [14915 15239])
+                    ("add" function
+                       (:throws ("IOException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("list" variable (:type "IndexElement") (reparse-symbol formal_parameters) [15261 15278]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [15245 15659])
+                    ("close" function
+                       (:throws ("IOException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [15665 16328]))                  
+                :type "class")
+                nil [1350 16330]))          
+    :file "IndexWriter.java"
+    :pointmax 16331
+    :fsize 16330
+    :lastmodtime '(18950 58896)
+    :unmatched-syntax '((COMMA 12508 . 12509) (GT 12496 . 12497) (IDENTIFIER 12479 . 12483) (LT 12483 . 12484) (COMMA 8567 . 8568) (GT 8555 . 8556) (IDENTIFIER 8538 . 8542) (LT 8542 . 8543) (SEMICOLON 8249 . 8250) (GT 8243 . 8244) (IDENTIFIER 8227 . 8236) (LT 8236 . 8237) (GT 7015 . 7016) (IDENTIFIER 6998 . 7002) (LT 7002 . 7003) (SEMICOLON 6929 . 6930) (GT 6917 . 6918) (IDENTIFIER 6900 . 6904) (LT 6904 . 6905) (GT 6269 . 6270) (IDENTIFIER 6252 . 6256) (LT 6256 . 6257) (SEMICOLON 6212 . 6213) (GT 6200 . 6201) (IDENTIFIER 6183 . 6187) (LT 6187 . 6188) (GT 5629 . 5630) (IDENTIFIER 5612 . 5616) (LT 5616 . 5617) (SEMICOLON 1569 . 1570) (GT 1562 . 1563) (IDENTIFIER 1540 . 1549) (LT 1549 . 1550))
+    )
+   )
+  :file "!drive_c!source!search engine!galagosearch-1.04-src!galagosearch-core!src!main!java!org!galagosearch!core!index!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

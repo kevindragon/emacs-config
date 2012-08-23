@@ -1,128 +1,128 @@
-python.exe compare.py  klaw_210.xml klaw_200.xml 
-python.exe compare.py  kcase_210.xml kcase_200.xml 
-python.exe compare.py koverview_210.xml koverview_200.xml 
-python.exe compare.py klaw_210.xml klaw_200.xml 
-python.exe compare.py klaw_200.xml klaw_210.xml 
-clear
-cls
-?
-/?
-help
-python.exe compare.py kep_news_210.xml kep_news_200.xml 
-python.exe compare.py knewlaw_210.xml knewlaw_200.xml 
-python.exe compare.py knewlaw_210.xml newlaw.csv 
-python.exe compare.py ep_news.csv  kep_news_210.xml
-python.exe compare.py kep_news_210.xml ep_news.csv 
+python.exe threading_poll.py 
+python.exe threading_poll.py 
+python.exe a.py
+python.exe a.py
+python.exe a.py
+python.exe a.py
+python.exe a.py
+exit
+cvs co -r englishhyperlink Ess
+echo $CVSROOT
+ls
+ls -al
+cd parallel/
+ls
+cd /
+cd workspace/
+ls
+exit
+curl
+curl http://localhost:8983/solr/update/csv?commit=true --data-binary @data.csv -H 'Content-type:text/plain; charset=utf-8'
+curl http://localhost:8983/solr/update/csv?commit=true --data-binary @data.csv -H 'Content-type:text/plain; charset=utf-8'
+tasklist
+ps
+ps aux | grep ps
+ps aux | grep java
+tasklist.exe | grep java
+tasklist.exe 
+ping sqladm.lexiscn.com
+ping sqladm.lexiscn.com
+ping sqladm.lexiscn.com
+ping sqladm.lexiscn.com
+cd /
+ls
+cd workspace/working-tools/
+ls
+cd Autonomy/
+ls
+python.exe gen_autn_url.py law
 cd ../
 ls
-ls
-mv x:/littery/autn/knewlaw_210.xml ./
-mv x:/littery/autn/knewlaw_200.xml ./
-ls
-python.exe compare.py knewlaw_200.xml knewlaw_210.xml 
-tracert hk.lexiscn.com
-tracert hk.lexiscn.com
-tracert staging2.lexisnexis.com.cn
-tracert staging2.lexisnexis.com.cn
-python 
-ping monitorix.lexisnexis.com.cn
-ping
-cd /
-ping monitorix.lexisnexis.com.cn
-cp IndustryCategory.class.php /cvsrepos/alpha/topic/class/
-exit
-l
-ls
-gcc -o hanoi hanoi.c 
-exit
-cd c:/workspace/
-ls
-cd check/data_count_check/
-ls
-python.exe compare.py klaw_211.xml klaw_210.xml 
-ping zabbix.lexisnexis.com.cn
-ping hk.lexiscn.com
-ping staging2.lexisnexis.com.cn
-ping staging2.lexisnexis.com.cn
-cd ../
-ls
-cd ../workspace/
-ls
-cd check/
-ls
-cd data_count_check/
-ls
-python.exe compare.py klaw_200.xml klaw_211.xml 
-python.exe compare.py klaw_211.xml klaw_200.xml 
-python.exe compare.py kcase_211.xml kcase_200.xml 
-python.exe compare.py kcase_200.xml kcase_211.xml
-ls
-exit
-ipconfig /all
-ipconfig
-ipconfig /all
-ipconfig /all
-exit
-ipconfig /all
-exit
-cd /
-cd workspace/check/data_count_check/
-ls
-python.exe compare.py ep_news_case-08.csv kep_news_case.xml 
-python.exe compare.py tax-09.csv klaw_211.xml
-python.exe law.csv klaw_211.xml
-python.exe compare.py law.csv klaw_211.xml
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-python.exe pickupid.py 
-clear
-exit
-python.exe pickupid.py klaw_211.xml
-python.exe pickupid.py klaw_211.xml
-python.exe pickupid.py klaw_211.xml
-exit
-ls
-gcc
-gcc -o pickid pickid.c 
-exit
+git status
+git pull 
+cd -
+python.exe gen_autn_url.py law
+python.exe gen_autn_url.py law
 cd ../../
+ls
+cd pyth
+mkdir python
+cd python/
+ls
+django-admin.py startproject wtools
+ls
+ls
+test.py
+python test.py
+cd ../
+ls
+rm -rf python
 ls
 cd working-tools/
 ls
 cd Autonomy/
 ls
-cd ../
+python.exe gen_autn_url.py law_news ep_news
+python.exe gen_autn_url.py case
+cd /workspace/
 ls
-git status
-git remote -v
-git pull
+cd working-tools/
+ls
 cd Autonomy/
 ls
-git status
-git commit -am "添加从xml取ID的程序(C语言)"
-git add .
-git commit -am "添加从xml取ID的程序(C语言)"
-git status
-git log
-git status
-git push
-cd ../../
+python.exe gen_autn_url.py law case
+cd 
 ls
-cd check/
+cd /workspace/
 ls
-cd data_count_check/
+git clone git@10.123.4.212:/data/GIT/EnglishHyperlink.git
+exit
+cd x:/
+cd cvsrepos/Ess/cfgs/cfg.202/odbcfetch/increment/
+cvs status ex_expertqa.cfg
+cvs diff ex_expertqa.cfg
+cvs ci -m "remove isEnglish=cross....is_english condition" ex_expertqa.cfg
 ls
-python.exe compare.py kcase.csv kcase.log 
+ls
+ls
+ls
+exit
+cvs status ip_news.cfg 
+cvs ci -m "add hyperlink config including chinese and english" ip_news.cfg 
+cvs status biz_news.cfg
+cvs ci -m "add hyperlink config including chinese and english" biz_news.cfg
+cvs status law_news.cfg 
+cvs ci -m "add hyperlink config including chinese and english" law_news.cfg 
+ls
+rm *~
+ls
+rm odbcfetch_inc.cfg.bak
+ls
+clear
+exit
+ls
+ls
+ls
+ls
+ls
+ll
+ls -al
+ls -al
+ls -al
+ls
+ls
+ls
+ls
+ls
+ls
+exit
+ls -al
+ls -al
+ls -al
+ls -al
+ls
+ls
+exit
+ls
+ls
+ls

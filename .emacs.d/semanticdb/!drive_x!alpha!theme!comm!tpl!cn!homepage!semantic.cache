@@ -1,0 +1,162 @@
+;; Object homepage/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "homepage/"
+  :tables (list 
+   (semanticdb-table "search_result.tpl"
+    :major-mode 'html-mode
+    :tags 
+        '( ("Home<{else}>首页<{/if}>" anchor nil nil [254 257])
+            ("&nbsp;
+									<i>
+										&nbsp;<{$item.date}>&nbsp;" anchor nil nil [7176 7179])
+            ("function submitForm(a){
+		document.getElementById("page").value = a;
+		document.searchResultForm.submit();
+	}
+	$(document).ready(function(){
+		var sel;
+		$('.selector_icon, .custom_sel').click(function(){
+			if($(this).prev().prev().hasClass('.sel_layer')){
+				temp = $(this).prev().prev().show();
+			}else{
+				temp = $(this).parent().prev().show();
+			}
+			sel = temp.parent().parent();
+		});
+		$('.sel_layer').hover(
+			function(){$(this).show();},
+			function(){$(this).hide();}
+		).find('li').hover(
+			function(){
+				$(this).css({'background-color':'#cc0033','color':'#fff'});
+			},
+			function(){
+				$(this).css({'background-color':'#fff','color':'#949494'});
+			}
+		).click(function(){
+			if(sel.attr('id') == 'orderByForm'){
+				$('#orderBy').attr('value',$(this).attr('value'));
+				submitForm(1);
+			}else{
+				sel.find('.custom_sel').html($(this).html()).end().find('.sel_layer').hide();
+				if($(this).attr('value') == '1'){
+					$('.hl_area_2').hide();
+					$('#disType').attr('value',1);
+				}else if($(this).attr('value') == '0'){
+					$('.hl_area_2').show();
+					$('#disType').attr('value',0);				
+				}
+			}
+		});	
+		$('#slide_arrow').click(function(){
+			$('#searchResultForm tr:gt(0)').toggle();
+		}).hover(
+			function(){$(this).addClass('slide_arrow_hover');},
+			function(){$(this).removeClass('slide_arrow_hover');}
+		);
+	});" section nil nil [8189 11369])
+            ("$(function() {
+// 把提示元素提取到最外层
+var e = $('div[id^=s-alert-wrap]'); e.remove();
+$(document.body).append(e);
+var dw = parseInt($(document.body).width());
+function calcRight() {
+  dw = parseInt($(document.body).width());
+  var ml = parseInt($('#main_wrapper').offset().left) + parseInt($('#main_wrapper').width());
+  var mwRight = dw - ml;
+  mwRight = (mwRight > 43) ? mwRight-43 : 2;
+  return mwRight;
+}
+// 计算s-alert-wrap
+var mwRight = calcRight();
+$(window).resize(function() {
+  e.css({'right': calcRight()});
+});
+
+// 计算距离最上面的高度
+var salertsmalltop = 0;
+
+// 显示动画
+<{if $ngram_first}>
+// 初始右边距
+var alertInitRight = parseInt((dw-$('#s-alert-wrap').width())/2);
+$('#s-alert-wrap').css('right', alertInitRight);
+var alertEndRight = parseInt((dw-400)/2);
+window.setTimeout(function(){
+  $('#s-alert-wrap').animate({width:+400, height:+200, top:+250, right:+alertEndRight}, 120, function(){
+    salertsmalltop = e.offset().top;
+  });
+}, 300);
+<{else}>
+window.setTimeout(function(){
+  $('#s-alert-wrap-small').css({'right':mwRight, 'top':300}).show();
+  salertsmalltop = e.offset().top;
+  $('#s-alert-small').bind('click', nsearch);
+}, 300);
+<{/if}>
+
+if ($.browser.msie && $.browser.version <= "8") {
+  e.addClass('s-alert-ie');
+}
+<{if $lang eq 'cn'}>
+var iconH = 137;
+<{else}>
+var iconH = 149;
+<{/if}>
+// 关闭按钮
+$('#s-alert-close-btn').click(function(){
+  $('#s-alert-text').hide();
+  $('#s-alert-wrap').animate(
+    {width:+30, height:+iconH, top:+300, right:mwRight, padding:0}, 300, 
+    function(){
+      $('#s-alert-shadow').hide();
+      $('#s-alert-text').hide();
+      $('#s-alert-wrap').css({'position': 'fixed'});
+      if ($.browser.msie) {
+        if ($.browser.version == "6.0") {
+          $('#s-alert-wrap').css({'position': 'absolute'});
+        }
+        salertsmalltop = e.offset().top;
+      }
+      $('#s-alert-small').show();
+      $('#s-alert-small').bind('click', nsearch);
+    }
+  );
+  $.cookie('ngram_noticed', 1, {path:'/'});
+});
+$('#s-alert-try').click(function(){
+  $.cookie('ngram_noticed', 1, { 'path' : '/' });
+  nsearch();
+});
+
+// 如果是IE6，最小化后跟随滚动
+if ($.browser.msie && $.browser.version == "6.0") {
+  e.css('position', 'absolute');
+  $(window).scroll(function (){ 
+    var offsetTop = salertsmalltop + $(window).scrollTop() +"px"; 
+    e.animate({'top' : offsetTop}, {'duration':300 , 'queue':false }); 
+  });
+}
+
+// 旁边semantic搜索提示效果
+$('#s-alert-small').hover(function(){
+    $('div', this).addClass('s-alert-active');
+  }, function(){
+    $('div', this).removeClass('s-alert-active');
+  });
+});
+function nsearch(){
+  $('#engine_type').val('ngram');
+  $('#search_form').submit();
+}" section nil nil [11369 14021]))          
+    :file "search_result.tpl"
+    :pointmax 14021
+    :fsize 14190
+    :lastmodtime '(20523 27904)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!drive_x!alpha!theme!comm!tpl!cn!homepage!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )
