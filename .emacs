@@ -180,6 +180,7 @@
 ;; 让Emacs可以直接打开和显示图片(貌似不管用)
 (auto-image-file-mode)
 
+<<<<<<< HEAD
 (put 'dired-find-alternate-file 'disabled nil)
 
 ;; 复制一行或者多行
@@ -226,3 +227,9 @@
     (let ((explicit-shell-file-name "c:/cygwin/bin/bash"))
      (call-interactively 'shell)))
 
+=======
+(defun cygwin-shell ()
+    (interactive)
+    (let ((explicit-shell-file-name "d:/cygwin/bin/bash"))
+     (call-interactively 'shell)))
+>>>>>>> 32e39c2fd6f325fe5966b2aa3121f9fe048dc1e7
