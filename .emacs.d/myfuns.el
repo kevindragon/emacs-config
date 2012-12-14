@@ -83,7 +83,7 @@ BEG and END (region to sort)."
 
 ;; 设置自动折行，习惯了vim下面的set wrap
 (defun set-wrap ()
-  "自动折行形状"
+  "自动折行开关"
   (interactive)
   (save-excursion
     (toggle-truncate-lines)))
