@@ -136,6 +136,9 @@
 ;; 递归minibuffer
 (setq enable-recursive-minibuffers t)
 
+;; 加载自定义函数以及自定义快捷键
+(load "myfuns")
+
 ;; auto complete
 (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1/")
 (require 'auto-complete)
