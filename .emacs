@@ -68,6 +68,9 @@
 ;; 去掉工具栏
 (tool-bar-mode 0)
 
+;; set scroll bar position
+(customize-set-variable 'scroll-bar-mode 'right)
+
 ;;  窗口切换
 ;(windmove-default-keybindings 'alt)
 (windmove-default-keybindings)
@@ -247,3 +250,8 @@
     (let ((explicit-shell-file-name "c:/cygwin/bin/bash"))
      (call-interactively 'shell)))
 
+(if (eq system-type 'gnu/linux)
+    (progn
+      (add-to-list 'load-path "~/.emacs.d/ibus/")
+      (require 'ibus)
+      (add-hook 'after-init-hook 'ibus-mode-on)))
