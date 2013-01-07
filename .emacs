@@ -59,8 +59,11 @@
 (setq x-select-enable-clipboard t)
 
 ;; 启动窗口大小
-(setq default-frame-alist
-  '((height . 30) (width . 100) (menu-bar-lines . 20) (tool-bar-line . 0)))
+(if (eq system-type 'windows-nt)
+  (setq default-frame-alist
+    '((height . 30) (width . 100) (menu-bar-lines . 20) (tool-bar-line . 0)))
+  (setq default-frame-alist
+    '((height . 30) (width . 100))))
 
 ;; 去掉工具栏
 (tool-bar-mode 0)
