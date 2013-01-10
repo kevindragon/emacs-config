@@ -3,3 +3,6 @@
 .emacs-places
 .emacs.desktop
 .emacs.desktop.lock
+windows/.emacs.desktop
+windows/.emacs.desktop.lock
+windows/.emacs-places

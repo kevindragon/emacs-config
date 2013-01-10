@@ -1,0 +1,128 @@
+ping www.baidu.com
+ping www.sina.com.cn
+exit
+python.exe cross_check.py 
+python.exe cross_check.py 
+python.exe cross_check.py 
+python.exe cross_check.py 
+rm cross_check.py 
+ls
+cd 
+ls
+cd -
+ls
+cd cron
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls -al
+ls
+ls
+ls
+ls
+ls
+php
+exit
+find -name '*.sh' -exec grep -l 'cron_tax_checkDuplicatebyday' {} \;
+find -name '*.sh' 
+exit
+c:/
+cd workspace/Ess/
+ls
+cd cfgs/cfg.202/odbcfetch/increment/
+ls
+rm *~
+ls
+cvs status tax.cfg
+exit
+ifconfig /all
+ipconfig /all
+ipconfig /all
+ssh root@10.123.4.54
+ls
+cd ../
+nginx
+nginx.exe
+cd sbi
+cd sbin
+ls
+./nginx.exe
+git statu
+git status
+cd ../
+git status
+git pull origin master
+exit
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+python.exe seperate.py case.diff 
+scp myfetch.tar.gz dchk@192.168.0.31:~/kevin/
+scp myfetch.tar.gz dchk@192.168.0.31:~/kevin/
+ls
+cd ../../
+ls
+grep
+help grep
+grep /?
+cd workspace/
+ls
+cd ../project/
+ls
+cd report/
+ls
+cd 数据增长统计/
+ls
+ls
+ls
+ls
+scp dchk@staging2.lexisnexis.com.cn:~/kevin/added_data.log ./
+excel Book1.xlsx
+whereis excel
+which
+which excel
+explorer
+explorer .
+cd /
+cd workspace/working-tools/
+ls
+git status
+git add .
+git commit -am "record autonomy's data increase"
+cd ../
+ls
+cd ../project/
+ls
+cd report/
+ls
+cd 2012-12-24_2012-12-30/
+scp dchk@staging2.lexisnexis.com.cn:~/kevin/query.log.26-Dec-12-08.28.00.zip ./
+unzip.exe query.log.26-Dec-12-08.28.00.zip 
+ls
+cd ../
+ls
+python.exe stat.py 2012-12-24_2012-12-30/query.log.26-Dec-12-08.28.00
