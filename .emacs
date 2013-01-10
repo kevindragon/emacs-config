@@ -81,15 +81,14 @@
 ;; 开启括号自动补全
 (electric-pair-mode t)
 
-
 ;; 不产生备份文件
 (setq make-backup-files nil)
 
 ;; 防止页面滚动时跳动，scroll-margin 3可以在靠近屏幕边缘3行时就开始滚动
 (setq scroll-conservatively 10000
       scroll-margin 3)
-(add-hook 'eshell-mode
-          (setq scroll-margin 1))
+;(add-hook 'eshell-mode
+;          (setq scroll-margin 1))
 
 ;; 把缺省的 major mode 设置为 text-mode, 而不是几乎什么功能也 没有的 fundamental-mode.
 (setq default-major-mode 'text-mode)
@@ -112,16 +111,16 @@
 (global-set-key [(shift f3)] 'highlight-symbol-prev)
 (global-set-key [(meta f3)] 'highlight-symbol-prev)
 
-;; 当emacs退出时保存文件打开状态
-(add-hook 'kill-emacs-hook
-  '(lambda()(desktop-save "~/")))
-
 ;; 当emacs退出时保存打开的文件
 (load "desktop") 
 (desktop-save-mode 1)
 (setq-default desktop-load-locked-desktop t)
-(desktop-read)
 (desktop-load-default)
+(desktop-read)
+
+;; 当emacs退出时保存文件打开状态
+(add-hook 'kill-emacs-hook
+  '(lambda()(desktop-save "~/.emacs.d")))
 
 ;; 记住上次文件打开的位置
 (require 'saveplace)
@@ -145,16 +144,6 @@
 ;; 加载自定义函数以及自定义快捷键
 (load "myfuns")
 
-;; auto complete
-(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1/")
-(require 'auto-complete)
-(require 'auto-complete-config)
-(global-auto-complete-mode t)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete-1.3.1/ac-dict")
-(ac-config-default)
-(setq ac-auto-start 2)
-(setq ac-dwim t)
-
 ;; 在行首删除一行时，把换行符也删除掉
 ;(setq-default kill-whole-line t)
 (setq-default kill-ring-max 10000)
@@ -163,6 +152,10 @@
 (require 'cedet)
 (global-ede-mode 1)
 
+;; php mode
+(add-to-list 'load-path "~/.emacs.d/php-mode/")
+(load "php-mode-config")
+
 ;; yasnippet
 (add-to-list 'load-path "~/.emacs.d/yasnippet")
 (require 'yasnippet)
@@ -170,6 +163,17 @@
 (setq yas/prompt-functions 
       '(yas/dropdown-prompt yas/x-prompt yas/completing-prompt yas/ido-prompt yas/no-prompt))
 (yas/global-mode 1)
+(yas/minor-mode-on)
+
+;; auto complete
+(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1/")
+(require 'auto-complete)
+(require 'auto-complete-config)
+(global-auto-complete-mode t)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete-1.3.1/ac-dict")
+;(ac-config-default)
+;(setq ac-auto-start 2)
+;(setq ac-dwim t)
 
 ;; python
 (require 'python-mode)
@@ -185,10 +189,6 @@
 (autoload 'python-mode "python-mode" "Python editing mode." t)
 (setq interpreter-mode-alist(cons '("python" . python-mode)
                                   interpreter-mode-alist))
-
-;; php mode
-(add-to-list 'load-path "~/.emacs.d/php-mode/")
-(load "php-mode-config")
 
 ;; tabbar mode
 ;(require 'tabbar)
@@ -231,18 +231,6 @@
 ;; web settings
 (add-to-list 'auto-mode-alist 
              (cons "\\.tpl" 'html-mode))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ede-project-directories (quote ("c:/workspace/lab/python/mysite/mysite"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;; use cygwin shell
 (defun cygwin-shell ()
@@ -250,6 +238,7 @@
     (let ((explicit-shell-file-name "c:/cygwin/bin/bash"))
      (call-interactively 'shell)))
 
+;; if system type is linux load ibus mode
 (if (eq system-type 'gnu/linux)
     (progn
       (add-to-list 'load-path "~/.emacs.d/ibus/")

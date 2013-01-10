@@ -1,8 +1,3 @@
-python.exe threading_poll.py 
-python.exe threading_poll.py 
-python.exe a.py
-python.exe a.py
-python.exe a.py
 python.exe a.py
 python.exe a.py
 exit
@@ -126,3 +121,8 @@ exit
 ls
 ls
 ls
+cvs status crontab.txt 
+cvs commit -m "move autonomy checking script to 7:50" crontab.txt 
+cd mnt/
+sudo ./lmount.sh 
+exit
