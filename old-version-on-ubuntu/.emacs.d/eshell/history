@@ -1,0 +1,128 @@
+exit
+curl
+curl http://localhost:8983/solr/update/csv?commit=true --data-binary @data.csv -H 'Content-type:text/plain; charset=utf-8'
+curl http://localhost:8983/solr/update/csv?commit=true --data-binary @data.csv -H 'Content-type:text/plain; charset=utf-8'
+tasklist
+ps
+ps aux | grep ps
+ps aux | grep java
+tasklist.exe | grep java
+tasklist.exe 
+ping sqladm.lexiscn.com
+ping sqladm.lexiscn.com
+ping sqladm.lexiscn.com
+ping sqladm.lexiscn.com
+cd /
+ls
+cd workspace/working-tools/
+ls
+cd Autonomy/
+ls
+python.exe gen_autn_url.py law
+cd ../
+ls
+git status
+git pull 
+cd -
+python.exe gen_autn_url.py law
+python.exe gen_autn_url.py law
+cd ../../
+ls
+cd pyth
+mkdir python
+cd python/
+ls
+django-admin.py startproject wtools
+ls
+ls
+test.py
+python test.py
+cd ../
+ls
+rm -rf python
+ls
+cd working-tools/
+ls
+cd Autonomy/
+ls
+python.exe gen_autn_url.py law_news ep_news
+python.exe gen_autn_url.py case
+cd /workspace/
+ls
+cd working-tools/
+ls
+cd Autonomy/
+ls
+python.exe gen_autn_url.py law case
+cd 
+ls
+cd /workspace/
+ls
+git clone git@10.123.4.212:/data/GIT/EnglishHyperlink.git
+exit
+cd x:/
+cd cvsrepos/Ess/cfgs/cfg.202/odbcfetch/increment/
+cvs status ex_expertqa.cfg
+cvs diff ex_expertqa.cfg
+cvs ci -m "remove isEnglish=cross....is_english condition" ex_expertqa.cfg
+ls
+ls
+ls
+ls
+exit
+cvs status ip_news.cfg 
+cvs ci -m "add hyperlink config including chinese and english" ip_news.cfg 
+cvs status biz_news.cfg
+cvs ci -m "add hyperlink config including chinese and english" biz_news.cfg
+cvs status law_news.cfg 
+cvs ci -m "add hyperlink config including chinese and english" law_news.cfg 
+ls
+rm *~
+ls
+rm odbcfetch_inc.cfg.bak
+ls
+clear
+exit
+ls
+ls
+ls
+ls
+ls
+ll
+ls -al
+ls -al
+ls -al
+ls
+ls
+ls
+ls
+ls
+ls
+exit
+ls -al
+ls -al
+ls -al
+ls -al
+ls
+ls
+exit
+ls
+ls
+ls
+cvs status crontab.txt 
+cvs commit -m "move autonomy checking script to 7:50" crontab.txt 
+cd mnt/
+sudo ./lmount.sh 
+exit
+ls
+cd 
+ls
+cd .emacs.d/
+ls
+cd yasnippet/
+ls
+cd snippets/
+ls
+ll | grep php
+ls | grep php
+exit

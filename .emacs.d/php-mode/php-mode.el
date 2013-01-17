@@ -73,7 +73,7 @@
 (eval-when-compile
   (require 'regexp-opt))
 (require 'flymake)
-
+
 ;; Local variables
 ;;;###autoload
 (defgroup php nil
@@ -81,7 +81,7 @@
   :prefix "php-"
   :group 'languages)
 
-(defcustom php-executable "C:/Program Files/php-5.4.4/php.exe"
+(defcustom php-executable "/usr/bin/php"
   "The location of the PHP executable."
   :type 'string
   :group 'php)
@@ -231,7 +231,7 @@ have any tags inside a PHP string, it will be fooled."
   :type '(choice (const :tag "Warg" t) (const "Don't warn" nil))
   :group 'php)
 
-
+
 (defun php-mode-version ()
   "Display string describing the version of PHP mode."
   (interactive)
@@ -270,7 +270,7 @@ See `php-beginning-of-defun'."
   (interactive "p")
   (php-beginning-of-defun (- (or arg 1))))
 
-
+
 (defvar php-warned-bad-indent nil)
 
 ;; Do it but tell it is not good if html tags in buffer.
@@ -516,7 +516,7 @@ This is was done due to the problem reported here:
        php-beginning-of-defun-regexp)
 
   (run-hooks 'php-mode-hook))
-
+
 ;; Make a menu keymap (with a prompt string)
 ;; and make it the menu bar item's definition.
 (define-key php-mode-map [menu-bar] (make-sparse-keymap))
@@ -532,7 +532,7 @@ This is was done due to the problem reported here:
 (define-key php-mode-map
   [menu-bar php search-documentation]
   '("Search documentation" . php-search-documentation))
-
+
 ;; Define function name completion function
 (defvar php-completion-table nil
   "Obarray of tag names defined in current tags table and functions known to PHP.")
@@ -662,7 +662,7 @@ current `tags-file-name'."
     (if arglist
         (message "Arglist for %s: %s" tagname arglist)
         (message "Unknown function: %s" tagname))))
-
+
 (defun php-search-local-documentation ()
   "Search the local PHP documentation (i.e. in `php-manual-path')
 for the word at point.  The function returns t if the requested
@@ -724,7 +724,7 @@ searching the PHP website."
 ;; which does not follow this at the moment, but I see no better
 ;; choice.
 (define-key php-mode-map [?\t] 'indent-for-tab-command)
-
+
 (defconst php-constants
   (eval-when-compile
     (regexp-opt
@@ -1192,7 +1192,7 @@ searching the PHP website."
 
   "Gauchy level highlighting for PHP mode.")
 
-
+
 
 ;;; Provide support for Flymake so that users can see warnings and
 ;;; errors in real-time as they write code.
@@ -1213,7 +1213,7 @@ searching the PHP website."
 
 (add-to-list 'flymake-err-line-patterns
              '("\\(Parse\\|Fatal\\) error: \\(.*?\\) in \\(.*?\\) on line \\([0-9]+\\)" 3 4 nil 2))
-
+
 
 (defun php-send-region (start end)
   "Send the region between `start' and `end' to PHP for execution.
@@ -1231,7 +1231,7 @@ The output will appear in the buffer *PHP*."
       (call-process "php" nil php-buffer nil "-r" (clean-php-code code)))))
 
 (define-key php-mode-map "\C-c\C-r" 'php-send-region)
-
+
 
 (provide 'php-mode)
 
