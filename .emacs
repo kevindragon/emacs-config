@@ -9,6 +9,8 @@
 ;; 设置扩展路径
 (add-to-list 'load-path "~/.emacs.d/")
 
+;; load color theme
+(load "my-color-theme")
 
 ;; 关闭启动画面
 (setq inhibit-startup-message t)
