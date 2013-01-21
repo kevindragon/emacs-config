@@ -174,11 +174,16 @@
 (define-key php-mode-map '[M-S-down] 'flymake-goto-next-error)
 
 
-;;把speedbar嵌入到emacs的窗口中，而不是新建一个窗口启动，同时绑定到F5上。  
-(require 'sr-speedbar)  
-(setq sr-speedbar-right-side nil)  
-(setq sr-speedbar-width 30)  
-(setq speedbar-show-unknown-files t)  
-(global-set-key (kbd "<f5>") (lambda()  
-          (interactive)  
-          (sr-speedbar-toggle)))  
+;;把speedbar嵌入到emacs的窗口中，而不是新建一个窗口启动，同时绑定到F5上。
+(require 'sr-speedbar)
+(setq sr-speedbar-right-side nil)
+(setq sr-speedbar-width 30)
+(setq speedbar-show-unknown-files t)
+(global-set-key (kbd "<f5>") 
+		(lambda()
+		  (interactive)
+		  (sr-speedbar-toggle)))
+
+
+;; load myself functions
+(load "myfuns")
