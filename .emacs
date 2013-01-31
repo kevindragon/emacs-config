@@ -94,6 +94,13 @@
 (require 'hl-line)
 (global-hl-line-mode t)
 
+;; 高亮光标处的单词
+(require 'highlight-symbol)
+(global-set-key [(control f3)] 'highlight-symbol-at-point)
+(global-set-key [f3] 'highlight-symbol-next)
+(global-set-key [(shift f3)] 'highlight-symbol-prev)
+(global-set-key [(meta f3)] 'highlight-symbol-prev)
+
 ;; default directory
 (setq default-directory "~/")
 
@@ -108,6 +115,17 @@
       (add-hook 'after-init-hook 'ibus-mode-on)
       (set-default-font "-unknown-Droid Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"))
 
+(when (string= system-type 'windows-nt)
+  ;;指定当前buffer的写入编码，只对当前buffer有效，即此命令写在配置文件中无效，只能 通过M-x来执行
+  (set-buffer-file-coding-system 'utf-8-unix)
+  ;;指定新建buffer的默认编码为utf-8-unix，换行符为unix的方式
+  (setq default-buffer-file-coding-system 'utf-8-unix)
+  ;;将utf-8放到编码顺序表的最开始，即先从utf-8开始识别编码，此命令可以多次使用，后 指定的编码先探测
+  (prefer-coding-system 'utf-8)
+  ;;指定Emacs的语言环境，按照特定语言环境设置前面的两个变量
+  (set-language-environment 'utf-8)
+  ;; 指定Emacs的语言环境，按照特定语言环境设置前面的两个变量
+  (set-language-environment 'utf-8))
 
 ;; yasnippet
 (add-to-list 'load-path "~/.emacs.d/yasnippet")
@@ -176,13 +194,17 @@
 (define-key php-mode-map '[M-S-up] 'flymake-goto-prev-error)
 (define-key php-mode-map '[M-S-down] 'flymake-goto-next-error)
 
+;; web settings
+(add-to-list 'auto-mode-alist 
+             (cons "\\.tpl" 'html-mode))
+
 
 ;;把speedbar嵌入到emacs的窗口中，而不是新建一个窗口启动，同时绑定到F5上。
-(require 'sr-speedbar)
-(setq sr-speedbar-right-side nil)
-(setq sr-speedbar-width 30)
-(setq speedbar-show-unknown-files t)
-(global-set-key (kbd "<f5>") 
+(require 'sr-speedbar)
+(setq sr-speedbar-right-side nil)
+(setq sr-speedbar-width 30)
+(setq speedbar-show-unknown-files t)
+(global-set-key (kbd "<f5>") 
 		(lambda()
 		  (interactive)
 		  (sr-speedbar-toggle)))
