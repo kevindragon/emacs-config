@@ -1,0 +1,7 @@
+# -*- mode: php-mode -*-
+# name: echo "<pre>";print_r();echo "</pre>"
+# key: echopre
+# --
+echo "<pre>";
+print_r($1);
+echo "</pre>";$0
