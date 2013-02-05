@@ -205,10 +205,15 @@
 (setq sr-speedbar-width 30)
 (setq speedbar-show-unknown-files t)
 (global-set-key (kbd "<f5>") 
-		(lambda()
-		  (interactive)
-		  (sr-speedbar-toggle)))
+                (lambda()
+                  (interactive)
+                  (sr-speedbar-toggle)))
 
 
 ;; load myself functions
 (load "myfuns")
+
+
+;; set tabs
+(setq default-tab-width 4)
+(setq-default indent-tabs-mode nil)
