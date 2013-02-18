@@ -116,15 +116,17 @@
       (set-default-font "-unknown-Droid Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"))
 
 (when (string= system-type 'windows-nt)
-  ;;指定当前buffer的写入编码，只对当前buffer有效，即此命令写在配置文件中无效，只能 通过M-x来执行
+  ;; 设置文件名为gbk
+  (setq file-name-coding-system 'gbk)
+  ;;指定当前buffer的写入编码，只对当前buffer有效，即此命令写在配置文件中无效，只能通过M-x来执行
   (set-buffer-file-coding-system 'utf-8-unix)
   ;;指定新建buffer的默认编码为utf-8-unix，换行符为unix的方式
   (setq default-buffer-file-coding-system 'utf-8-unix)
-  ;;将utf-8放到编码顺序表的最开始，即先从utf-8开始识别编码，此命令可以多次使用，后 指定的编码先探测
+  ;;将utf-8放到编码顺序表的最开始，即先从utf-8开始识别编码，此命令可以多次使用，后指定的编码先探测
+  (prefer-coding-system 'gb18030)
   (prefer-coding-system 'utf-8)
+  (prefer-coding-system 'chinese-gbk)
   ;;指定Emacs的语言环境，按照特定语言环境设置前面的两个变量
-  (set-language-environment 'utf-8)
-  ;; 指定Emacs的语言环境，按照特定语言环境设置前面的两个变量
   (set-language-environment 'utf-8))
 
 ;; yasnippet
