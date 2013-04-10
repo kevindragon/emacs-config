@@ -219,3 +219,7 @@
 ;; set tabs
 (setq default-tab-width 4)
 (setq-default indent-tabs-mode nil)
+
+
+;; set version control
+(setq vc-handled-backends nil)
