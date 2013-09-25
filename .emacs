@@ -110,13 +110,16 @@
 
 ;; if system type is linux load ibus mode
 (when (eq system-type 'gnu/linux)
-      (global-set-key (kbd "C-SPC") 'nil))
+      (add-to-list 'load-path "~/.emacs.d/ibus/")
+      (require 'ibus)
+      (add-hook 'after-init-hook 'ibus-mode-on)
+      (set-default-font "-unknown-Droid Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"))
 
 (when (string= system-type 'windows-nt)
   ;; 设置文件名为gbk
   (setq file-name-coding-system 'gbk)
   ;;指定当前buffer的写入编码，只对当前buffer有效，即此命令写在配置文件中无效，只能通过M-x来执行
-  (set-buffer-file-coding-system 'utf-8-unix)
+  ;(set-buffer-file-coding-system 'utf-8-unix)
   ;;指定新建buffer的默认编码为utf-8-unix，换行符为unix的方式
   (setq default-buffer-file-coding-system 'utf-8-unix)
   ;;将utf-8放到编码顺序表的最开始，即先从utf-8开始识别编码，此命令可以多次使用，后指定的编码先探测
@@ -144,6 +147,9 @@
 ;(global-auto-complete-mode t)
 (setq ac-auto-start 1)
 (ac-config-default)
+(local-set-key (kbd "M-/") 'semantic-complete-analyze-inline)
+(local-set-key "." 'semantic-complete-self-insert)
+(local-set-key ">" 'semantic-complete-self-insert)
 
 
 ;; php mode
@@ -166,6 +172,12 @@
 (add-to-list 'auto-mode-alist 
              (cons "\\.tpl" 'html-mode))
 
+;; web mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.htm\\'" . web-mode))
 
 ;;把speedbar嵌入到emacs的窗口中，而不是新建一个窗口启动，同时绑定到F5上。
 (require 'sr-speedbar)
@@ -187,5 +199,5 @@
 (setq-default indent-tabs-mode nil)
 
 
-;; set version control
-(setq vc-handled-backends nil)
+;; for go lang
+(load "go-config")
