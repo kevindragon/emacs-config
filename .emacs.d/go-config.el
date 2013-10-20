@@ -36,8 +36,13 @@
 
     ;; Other
     (setq show-trailing-whitespace t)
-    (add-hook 'before-save-hook 'gofmt-before-save)
+    (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
+    (local-set-key (kbd "C-c r") 'go)
+    (local-set-key (kbd "C-c i") 'go-goto-imports)
     ))
+
+(add-hook 'before-save-hook 'gofmt-before-save)
+
 ;; helper function
 (defun go ()
     "run current buffer"
