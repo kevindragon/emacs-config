@@ -113,7 +113,8 @@
       (add-to-list 'load-path "~/.emacs.d/ibus/")
       (require 'ibus)
       (add-hook 'after-init-hook 'ibus-mode-on)
-      (set-default-font "-unknown-Droid Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"))
+      ;;(set-default-font "-unknown-Droid Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"))
+      (set-default-font "-unknown-Ubuntu Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"))
 
 (when (string= system-type 'windows-nt)
   ;; 设置文件名为gbk
