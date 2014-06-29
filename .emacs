@@ -130,6 +130,9 @@
   ;;指定Emacs的语言环境，按照特定语言环境设置前面的两个变量
   (set-language-environment 'utf-8))
 
+(setq mac-option-modifier 'super)
+(setq mac-command-modifier 'meta)
+
 ;; yasnippet
 (add-to-list 'load-path "~/.emacs.d/yasnippet")
 (require 'yasnippet)
