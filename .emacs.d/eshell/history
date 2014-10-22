@@ -1,0 +1,9 @@
+cd 
+cd ../
+pwd
+ls
+cd source/
+ls
+scp dchk@staging2.lexisnexis.com.cn:~/kevin/texinfo-4.13a-setup.exe ./
+texinfo-4.13a-setup.exe
+ls
