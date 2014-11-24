@@ -97,7 +97,8 @@ BEG and END (region to sort)."
 ; list the packages you want
 (setq package-list 
   '(auto-complete yasnippet go-mode go-autocomplete 
-    web-mode flymake flycheck))
+    web-mode js2-mode flymake flycheck color-theme angular-snippets
+    dired+ quickrun undo-tree))
 ; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
