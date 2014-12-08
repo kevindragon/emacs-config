@@ -98,8 +98,8 @@ BEG and END (region to sort)."
 (setq package-list 
   '(exec-path-from-shell dired+ auto-complete yasnippet browse-kill-ring
     highlight-symbol flymake flycheck color-theme quickrun undo-tree
-    markdown-mode web-mode js2-mode angular-snippets go-mode go-autocomplete php-mode
-    sass-mode))
+    markdown-mode web-mode js2-mode angular-snippets go-mode go-autocomplete 
+    php-mode sass-mode))
 ; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
@@ -128,6 +128,9 @@ BEG and END (region to sort)."
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; js2 mode
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; Golang
 (require 'go-autocomplete)
