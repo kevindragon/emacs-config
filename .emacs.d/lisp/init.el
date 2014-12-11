@@ -3,6 +3,9 @@
 ;; E-mail: kittymiky@gmail.com
 
 
+;; 外部依赖
+; go get -u github.com/dougm/goflymake
+
 
 ;; 设置扩展路径
 (add-to-list 'load-path "~/.emacs.d/lisp/")
