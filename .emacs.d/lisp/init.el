@@ -131,6 +131,8 @@ BEG and END (region to sort)."
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)2
 
 ;; js2 mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
