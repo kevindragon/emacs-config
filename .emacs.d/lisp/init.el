@@ -99,10 +99,10 @@ BEG and END (region to sort)."
 
 ; list the packages you want
 (setq package-list 
-  '(exec-path-from-shell dired+ auto-complete yasnippet browse-kill-ring
+  '(exec-path-from-shell dired+ auto-complete yasnippet browse-kill-ring+
     highlight-symbol flymake flycheck color-theme quickrun undo-tree
     markdown-mode web-mode js2-mode angular-snippets go-mode go-autocomplete 
-    php-mode sass-mode, browse-kill-ring))
+    php-mode sass-mode))
 ; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
