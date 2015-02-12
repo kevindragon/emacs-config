@@ -3,9 +3,6 @@
 ;; E-mail: kittymiky@gmail.com
 
 
-;; 外部依赖
-; go get -u github.com/dougm/goflymake
-
 
 ;; 设置扩展路径
 (add-to-list 'load-path "~/.emacs.d/lisp/")
@@ -98,10 +95,15 @@ BEG and END (region to sort)."
 (package-initialize)
 
 ; list the packages you want
+;(setq package-list 
+;  '(auto-complete yasnippet go-mode go-autocomplete highlight-symbol
+;    web-mode js2-mode flymake flycheck color-theme angular-snippets
+;    dired+ quickrun undo-tree exec-path-from-shell))
+; list the packages you want
 (setq package-list 
   '(exec-path-from-shell dired+ auto-complete yasnippet browse-kill-ring+ sr-speedbar
     highlight-symbol flymake flycheck color-theme quickrun undo-tree
-    markdown-mode web-mode js2-mode angular-snippets go-mode go-autocomplete 
+    markdown-mode web-mode js2-mode angular-snippets go-mode go-autocomplete
     php-mode sass-mode))
 ; fetch the list of packages available 
 (unless package-archive-contents
@@ -121,18 +123,18 @@ BEG and END (region to sort)."
 (require 'yasnippet)
 (yas-global-mode 1)
 
+;; auto highlight symbol
+(global-auto-highlight-symbol-mode t)
+
 ;; web mode
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)2
 
 ;; js2 mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -147,4 +149,11 @@ BEG and END (region to sort)."
               (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
               (local-set-key (kbd "C-c i") 'go-goto-imports)
               (local-set-key (kbd "M-.") 'godef-jump))))
-(require 'go-flymake)
+;(require 'go-flymake)
+
+;; php mode
+(require 'php-mode)
+;(add-hook 'php-mode-hook 'hs-minor-mode)
+
+;; load color theme
+(load "my-color-theme")
