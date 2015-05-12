@@ -9,6 +9,8 @@
 
 (setq max-lisp-eval-depth 20000)
 
+(prefer-coding-system 'utf-8)
+
 ;; uniq-line
 (defun uniq-lines (beg end)
   "Unique lines in region.
