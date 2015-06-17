@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: echopre
+# key: echopr
+# --
+echo "<pre>";
+print_r(${1:var});
+echo "</pre>";
+$0
