@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # name: echopre
-# key: echopr
+# key: echopre
 # --
 echo "<pre>";
 print_r(${1:var});
