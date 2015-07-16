@@ -106,7 +106,7 @@ BEG and END (region to sort)."
   '(exec-path-from-shell dired+ auto-complete yasnippet browse-kill-ring+ sr-speedbar
     highlight-symbol flymake flycheck color-theme quickrun undo-tree
     markdown-mode web-mode js2-mode angular-snippets go-mode go-autocomplete
-    php-mode sass-mode auto-highlight-symbol magit company rust-mode cider))
+    php-mode sass-mode auto-highlight-symbol magit company slime cider rust-mode))
 ; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
@@ -164,9 +164,9 @@ BEG and END (region to sort)."
 ;; load color theme
 (load "my-color-theme")
 
-
 ;; rust racer
-(when (and (fboundp 'rust-mode) (fboundp 'company-mode))
+(when (and (package-installed-p 'rust-mode) 
+           (package-installed-p 'company))
   (setq racer-rust-src-path "C:/Program Files/Rust stable 1.1/source/src/")
   (setq racer-cmd "C:/Program Files/racer/target/release/racer.exe")
   (add-to-list 'load-path "C:/Program Files/racer/editors/emacs")
@@ -176,3 +176,6 @@ BEG and END (region to sort)."
   (require 'rust-mode)
   (define-key rust-mode-map (kbd "TAB") #'racer-complete-or-indent)
   (define-key rust-mode-map (kbd "M-.") #'racer-find-definition))
+
+;; Enable company mode
+(add-hook 'after-init-hook 'global-company-mode)
