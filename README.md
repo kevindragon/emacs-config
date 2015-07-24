@@ -1,10 +1,10 @@
 emacs-config
 ============
 
-My Emacs configurations
+This is my Emacs configuration. You can start your programming work immediately, when you put .emacs and .emacs.d in right place (your HOME direcotiry).
 
 
-查看图片
+在Wdinwos下查看图片
 ----
 
 可以先在运行下面几个语句检查一下是否已经支持了图片
