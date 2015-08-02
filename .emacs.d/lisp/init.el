@@ -114,7 +114,7 @@ BEG and END (region to sort)."
     highlight-symbol flymake flycheck color-theme quickrun undo-tree clojure-mode
     markdown-mode web-mode js2-mode angular-snippets go-mode go-autocomplete
     php-mode sass-mode auto-highlight-symbol magit company slime cider rust-mode
-    jsx-mode react-snippets))
+    react-snippets))
 ; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
