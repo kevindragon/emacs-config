@@ -104,11 +104,6 @@ BEG and END (region to sort)."
 (package-initialize) ;; You might already have this line
 
 ; list the packages you want
-;(setq package-list 
-;  '(auto-complete yasnippet go-mode go-autocomplete highlight-symbol
-;    web-mode js2-mode flymake flycheck color-theme angular-snippets
-;    dired+ quickrun undo-tree exec-path-from-shell))
-; list the packages you want
 (setq package-list 
   '(exec-path-from-shell dired+ auto-complete yasnippet browse-kill-ring+ sr-speedbar
     highlight-symbol flymake flycheck color-theme quickrun undo-tree clojure-mode
@@ -188,17 +183,24 @@ BEG and END (region to sort)."
 (load "my-color-theme")
 
 ;; rust racer
-(when (and (package-installed-p 'rust-mode) 
-           (package-installed-p 'company))
-  (setq racer-rust-src-path "C:/Program Files/Rust stable 1.1/source/src/")
-  (setq racer-cmd "C:/Program Files/racer/target/release/racer.exe")
-  (add-to-list 'load-path "C:/Program Files/racer/editors/emacs")
-  (eval-after-load "rust-mode" '(require 'racer))
-  (require 'racer)
-  (add-hook 'rust-mode-hook #'racer-activate)
-  (require 'rust-mode)
-  (define-key rust-mode-map (kbd "TAB") #'racer-complete-or-indent)
-  (define-key rust-mode-map (kbd "M-.") #'racer-find-definition))
+;(when (and (package-installed-p 'rust-mode) 
+;           (package-installed-p 'company))
+;  (setq racer-rust-src-path "C:/Program Files/Rust stable 1.1/source/src/")
+;  (setq racer-cmd "C:/Program Files/racer/target/release/racer.exe")
+;  (add-to-list 'load-path "C:/Program Files/racer/editors/emacs")
+;  (eval-after-load "rust-mode" '(require 'racer))
+;  (require 'racer)
+;  (add-hook 'rust-mode-hook #'racer-activate)
+;  (require 'rust-mode)
+;  (define-key rust-mode-map (kbd "TAB") #'racer-complete-or-indent)
+;  (define-key rust-mode-map (kbd "M-.") #'racer-find-definition))
 
 ;; Enable company mode
 (add-hook 'after-init-hook 'global-company-mode)
+
+;; slime
+(setq inferior-lisp-program "sbcl")
+(add-hook 'slime-mode-hook 'set-up-slime-ac)
+(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'slime-repl-mode))
