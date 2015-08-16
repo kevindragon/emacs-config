@@ -95,13 +95,13 @@ BEG and END (region to sort)."
   (load "darwin")))
 
 ;; melpa
-(require 'package)
+(require 'package) ;; You might already have this line
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.org/packages/"))
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize)
+(package-initialize) ;; You might already have this line
 
 ; list the packages you want
 ;(setq package-list 
@@ -122,6 +122,20 @@ BEG and END (region to sort)."
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
+
+(defun update-packages ()
+  "刷新包内容，更新包."
+  (package-refresh-contents)
+  (require 'epl)
+  (epl-upgrade))
+
+(defun update-stable－packages ()
+  "只更新稳定的安装包."
+  (interactive)
+  (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                           ("melpa" . "http://stable.melpa.org/packages/")))
+  (update-packages)
+  (message "Stable－packages has updated."))
 
 ;; Auto-complete
 ;(require 'auto-complete)
