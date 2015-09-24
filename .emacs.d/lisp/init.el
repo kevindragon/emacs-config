@@ -109,7 +109,7 @@ BEG and END (region to sort)."
     highlight-symbol flymake flycheck color-theme quickrun undo-tree clojure-mode
     markdown-mode web-mode js2-mode angular-snippets go-mode go-autocomplete
     php-mode sass-mode auto-highlight-symbol magit company slime cider rust-mode
-    react-snippets))
+    react-snippets haskell-mode haskell-snippets))
 ; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
@@ -204,3 +204,6 @@ BEG and END (region to sort)."
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'slime-repl-mode))
+
+;; Haskell
+(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
